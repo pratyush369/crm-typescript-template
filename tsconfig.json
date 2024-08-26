@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+      "target": "ES5",                         // Ensures compatibility with older browsers that Dynamics 365 might run on.
+      "lib": ["dom", "es5", "es2015"],         // Includes DOM and ECMAScript libraries.
+      "module": "commonjs",                    // Use CommonJS for module system.
+      "moduleResolution": "node",              // Node.js-style module resolution.
+      "outDir": "./dist",                      // Output directory for compiled files.
+      "rootDir": "./src",                      // Root directory of source files.
+      "strict": true,                          // Enables all strict type-checking options.
+      "esModuleInterop": true,                 // Enables interoperability between CommonJS and ES Modules.
+      "skipLibCheck": true,                    // Skip type checking of declaration files.
+      "forceConsistentCasingInFileNames": true,// Ensure file names are case-sensitive.
+      "noImplicitAny": true,                   // Disallow usage of the `any` type.
+      "strictNullChecks": true,                // Enable strict null checks.
+      "noUnusedLocals": true,                  // Warn on unused local variables.
+      "noUnusedParameters": true,              // Warn on unused parameters.
+      "noFallthroughCasesInSwitch": true,      // Prevent fallthrough cases in switch statements.
+      "resolveJsonModule": true,               // Allows importing of JSON files as modules.
+      "isolatedModules": true,                 // Ensures each file is treated as a separate module.
+      "noImplicitThis": true,                  // Warn when `this` is of type `any`.
+      "removeComments": true,                  // Remove comments from the output.
+      "sourceMap": true                        // Generate source maps for debugging.
+    },
+    "include": [
+      "src/**/*.ts"                            // Include all TypeScript files in the src directory.
+    ],
+    "exclude": [
+      "node_modules",                          // Exclude node_modules from compilation.
+      "dist"                                   // Exclude dist folder from compilation.
+    ],
+    "typeRoots": [
+      "node_modules/@types",   // Include default types
+      "node_modules/@types/xrm" // Include Xrm types
+    ]
+  }
+  

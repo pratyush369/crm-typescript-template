@@ -1,0 +1,59 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json" // Ensure this path points to your tsconfig.json file
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    // Avoid using window.top
+    "no-restricted-globals": [
+      "error",
+      "document"
+    ],
+    "no-restricted-properties": [
+        "error",
+        {
+            "object": "window",
+            "property": "document"
+        }
+    ],
+    // Combine no-restricted-syntax rules
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.object.name='Xrm'][callee.property.name='Navigation.openForm']",
+        "message": "Consider disabling NavBar when programmatically opening forms or views in Dynamics 365 CRM to avoid slow client performance on high latency networks."
+      },
+      {
+        "selector": "Literal[value=\"/.*\\/api\\/data\\/v8.*/\"]",
+        "message": "Avoid using the OData v2.0 endpoint; use the Web API OData v4.0 endpoint instead in Dynamics 365 CRM."
+      }
+    ],
+    // Interact with HTTP and HTTPS resources asynchronously
+    "@typescript-eslint/require-await": "error",
+    // Remove deactivated or disabled customizations
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}

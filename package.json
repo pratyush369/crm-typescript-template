@@ -1,0 +1,40 @@
+{
+  "name": "crm-typescript",
+  "version": "1.0.0",
+  "description": "Dynamics 365/PowerApps Model Driven App Typescript/JavaScript Project",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint 'src/**/*.ts'",
+    "prettier:check": "prettier --check 'src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
+    "prettier:write": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
+    "format": "npm run prettier:write && npm run lint",
+    "build": "npm run format && tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratyush369/crm-typescript-template.git"
+  },
+  "keywords": [
+    "d365",
+    "crm"
+  ],
+  "author": "psg369",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pratyush369/crm-typescript-template/issues"
+  },
+  "homepage": "https://github.com/pratyush369/crm-typescript-template#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@types/xrm": "^9.0.80"
+  }
+}
