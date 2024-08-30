@@ -41,8 +41,4 @@ The `package.json` file contains the following scripts:
 - **Command:** `npm run format && tsc`
 - **Description:** Formats and lints the code using `format`, then compiles the TypeScript files using the TypeScript compiler (`tsc`).
 
-#### `start`
-- **Command:** `npm run build && node dist/index.js`
-- **Description:** Builds the project using the `build` script, then starts the application by running the compiled `index.js` file from the `dist` directory.
-
  
