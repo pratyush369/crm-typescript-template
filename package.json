@@ -8,8 +8,7 @@
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
     "prettier:write": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
     "format": "npm run prettier:write && npm run lint",
-    "build": "npm run format && tsc",
-    "start": "npm run build && node dist/index.js"
+    "build": "npm run format && tsc"
   },
   "repository": {
     "type": "git",
